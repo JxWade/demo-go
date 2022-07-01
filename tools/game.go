@@ -8,6 +8,30 @@ package tools
 //1 <= m <= 10^6
 //算法要求考虑时间效率。
 func Game(n, m uint) (win uint) {
+	// 初始化一个数组
+	arr := make([]uint, n)
+	for i := range arr {
+		arr[i] = uint(i)
+	}
 
+	for {
+		if len(arr) == 1 {
+			break
+		}
+		i := uint(0)
+		j := 0
+		for {
+			if j == len(arr) {
+				j = 0
+			}
+			if i == m {
+				arr = append(arr[:j], arr[j+1:]...)
+				break
+			}
+			i++
+			j++
+		}
+	}
+	win = arr[0]
 	return win
 }
