@@ -14,12 +14,12 @@ func Game(n, m uint) (win uint) {
 		arr[i] = uint(i)
 	}
 
+	j := 0
 	for {
 		if len(arr) == 1 {
 			break
 		}
-		i := uint(0)
-		j := 0
+		i := uint(1)
 		for {
 			if j == len(arr) {
 				j = 0
